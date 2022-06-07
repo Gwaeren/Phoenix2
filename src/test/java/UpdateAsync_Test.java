@@ -10,7 +10,7 @@ public class UpdateAsync_Test {
     String lenderCode = "TRP";
     String lenderCodeWrong = "XXXsdf";
 
-    @DisplayName("Status Code 200. All parameters are correct. contentTypeJSON checking.")
+    @DisplayName("Status Code 200. All parameters are correct. contentType.JSON checking.")
     @Order(1)
     @Test
     public void UpdateAsync_Test_1_AllRight_Code200_contentTypeJSON() {
