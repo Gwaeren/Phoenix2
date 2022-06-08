@@ -17,9 +17,11 @@ public class GetAllAsync_Test {
                 get("https://qa-api-v2.ilendingdirect.com/lender-service/lenders").
                 then().
                 assertThat().
-                body("code", hasItem("Blm"));
-/*                contentType(ContentType.JSON).
-                statusCode(200);*/
+                body("[0].code", equalTo("Blm")).
+                and().
+                body("[1].code", equalTo("Blr"));
+//                contentType(ContentType.JSON).
+//                statusCode(200);
     }
 
 }
