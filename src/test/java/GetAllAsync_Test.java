@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.responseSpecification;
+import static org.hamcrest.Matchers.*;
 
 public class GetAllAsync_Test {
 
@@ -16,9 +17,9 @@ public class GetAllAsync_Test {
                 get("https://qa-api-v2.ilendingdirect.com/lender-service/lenders").
                 then().
                 assertThat().
-                contentType(ContentType.JSON).
-                statusCode(200);
-        System.out.println();
+                body("code", hasItem("Blm"));
+/*                contentType(ContentType.JSON).
+                statusCode(200);*/
     }
 
 }
